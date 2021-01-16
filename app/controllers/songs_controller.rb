@@ -20,7 +20,7 @@ class SongsController < ApplicationController
     @song = artist.songs.build(song_params)
 
     if @song.save
-      redirect_to song_path
+      redirect_to songs_path
     else
       render :new
     end
