@@ -20,15 +20,15 @@ class Song < ActiveRecord::Base
     self.genre ? self.genre.name : nil
   end
 
-  def note_content=(content)
-    content.each do |f|
+  def note_contents=(contents)
+    contents.each do |f|
       if content.strip != ""
         self.notes.build(content: f)
       end
     end
   end
 
-  def note_content
+  def note_contents
     self.notes.map(&:content)
   end
 end
